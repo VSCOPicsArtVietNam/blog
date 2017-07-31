@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<style>
+			h1 {
+			color: #444;
+			text-align: center;
+			}
+			
+			.spec::before, ::after{
+			content: " ";
+			}
+			
+			.in-content {
+			width: 600px;
+			margin: 15px auto;
+			background-color: #EEE;
+			border: 1px solid #AAA;
+			border-radius: 10px;
+			padding: 15px;   
+			}
+			
+			p {
+			font-family: verdana;
+			font-size: 16px;
+			margin-left: 10px;
+			}
+            
+            li {
+			font-family: verdana;
+			font-size: 16px;
+			margin-left: 10px;
+			}
+			
+			.conbobtn {
+			cursor: pointer;
+			color: #FF0000;
+			font-weight: bold;
+			text-transform: uppercase;
+			border: 1px solid #AAA;
+			padding: 5px;
+			border-radius: 3px;
+			}
+			
+			.conbobtn:hover {
+			color: #0000FF;
+			}
+			
+			#mualan1, #mualan2, #mualan3, #banbo1, #banbo2, #conbobtn5, #lailan1, #cuoicung, #conbobtn8, #laicuoi{
+			display: none;
+			}
+			
+			.conbo {
+			font-family: verdana;
+			font-size: 24px;
+			width: 100%;
+			text-align: center;
+			font-weight: bold;
+			text-transform: uppercase;
+			display: none;
+			}
+			
+		</style>
+		<script>
+			$(document).ready(function(){
+				var vonbandau = 13;
+				var tienvay = 2;
+				var sono = 0;
+				var mualan1 = 13;
+				var giaboban1 = 15;
+				var giaboban2 = 17;
+                var giaboban3 = 19;
+				var mualan2, mualan3, banlan1, banlan2, lailan1, lailan2;
+				var luongtien = "triệu";
+				var tongsotien;
+                var tienlai;
+                var animateDuration = 1000;
+				tongsotien = vonbandau;
+				$("#vonbandau").text(vonbandau + " " + luongtien);
+				$("#sotien").text(tongsotien + " " + luongtien);
+				$("#sono").text(sono + " " + luongtien);
+				$("#conbobtn1").click(function() {   	
+					$("#conbobtn1, #spec1").fadeOut(animateDuration, function(){    	
+						$("#mualan1").slideDown(animateDuration,function(){
+                        	var pos = $("#mualan1").offset().top;
+                        	$('html, body').animate({scrollTop: pos}, animateDuration);
+                        });
+                    });
+				});
+				$("#conbobtn2").click(function() {
+					tongsotien = mualan1 - vonbandau;
+					$("#conbobtn2").fadeOut(animateDuration,function(){
+                    	$("#mualan1-text").text("Ông Nam mua con");
+						$("#conbo1").text("Bò giá " + mualan1 + " " + luongtien);
+						$("#conbo1").fadeIn(animateDuration,function(){
+                        	$("#sotien").text(tongsotien + " " + luongtien);  
+							$("#banbo1").slideDown(animateDuration,function(){
+                            	var pos = $("#banbo1").offset().top;
+                        		$('html, body').animate({scrollTop: pos}, animateDuration);
+                            });
+						});  
+					}); 
+				});
+				$("#conbobtn3").click(function() {
+					lailan1 = giaboban1 - mualan1;
+					tongsotien = lailan1 + vonbandau;
+					banlan1 = tongsotien;
+					$("#conbobtn3").fadeOut(animateDuration,function(){
+                    	$("#banbo1-text").text("Sau đó ông Nam bán con");
+						$("#conbo2").text("Bò giá " + banlan1 + " " + luongtien);
+						$("#lailan1").html("Ông Nam lãi <strong>" + lailan1 + " " + luongtien +"</strong> ở lần bán thứ nhất.");
+						$("#conbo2").fadeIn(animateDuration,function(){
+							$("#lailan1").fadeIn(animateDuration,function(){
+								$("#conbobtn4").text("Vay " + tienvay + " " + luongtien);
+                            	$("#sotien").text(tongsotien + " " + luongtien);
+								$("#mualan2").slideDown(animateDuration, function(){
+                            		var pos = $("#mualan2").offset().top;
+                        			$('html, body').animate({scrollTop: pos}, animateDuration);
+                            	});
+                        	});
+						});
+					});  
+				});
+				$("#conbobtn4").click(function() {
+					sono = sono + tienvay;
+					tongsotien = tongsotien + sono;
+					$("#conbobtn4").fadeOut(animateDuration,function(){
+                    	$("#sono").text(sono + " " + luongtien);
+						$("#sotien").text(tongsotien + " " + luongtien);
+                        $("#mualan2-text").html("Nhưng vì tiếc con bò nên ông Nam vay <strong>" + sono + " " + luongtien +"</strong> để");
+						$("#conbobtn5").fadeIn(animateDuration);          
+					});          
+				});
+				$("#conbobtn5").click(function() {
+					mualan2 = giaboban2;
+					tongsotien = mualan2 - (banlan1 + sono);       
+					$("#conbobtn5").fadeOut(animateDuration,function(){
+                    	$("#mualan2-text").html("Nhưng vì tiếc con bò nên ông Nam vay <strong>" + sono + " " + luongtien + "</strong> để mua lại con");
+						$("#conbo3").text("Bò giá " + mualan2 + " " + luongtien);
+						$("#conbo3").fadeIn(animateDuration,function(){
+                            $("#sotien").text(tongsotien + " " + luongtien);
+							$("#banbo2").slideDown(animateDuration, function(){
+                            	var pos = $("#banbo2").offset().top;
+                        		$('html, body').animate({scrollTop: pos}, animateDuration);
+                            });
+						});
+					});          
+				});
+				$("#conbobtn6").click(function() {
+					lailan2 = giaboban3 - mualan2;
+					tongsotien = lailan2 + lailan1 + vonbandau + sono;
+					banlan2 = tongsotien;
+					$("#conbobtn6").fadeOut(animateDuration,function(){
+						$("#conbo4").text("Bò giá " + banlan2 + " " + luongtien);
+						$("#lailan2").html("Ông Nam lãi <strong>" + lailan2 + " " + luongtien +"</strong> ở lần bán thứ hai");
+						$("#banbo2-text").text("Sau đó ông Nam bán con");
+						$("#conbo4").fadeIn(animateDuration,function(){
+							$("#lailan2").fadeIn(animateDuration,function(){
+                            	$("#sotien").text(tongsotien + " " + luongtien);
+								$("#cuoicung").slideDown(animateDuration, function(){
+                            		var pos = $("#cuoicung").offset().top;
+                        			$('html, body').animate({scrollTop: pos}, animateDuration);
+                            	});
+                            });
+						});
+					});  
+				});
+                $("#conbobtn7").click(function() { 
+                	tongsotien = tongsotien - sono;
+                	sono = sono - tienvay;
+					$("#conbobtn7").fadeOut(animateDuration, function(){ 
+                    	$("#sotien").text(tongsotien + " " + luongtien);
+						$("#sono").text(sono + " " + luongtien);
+                        $("#trano").html("Ông Nam đã trả nợ <strong>" + tienvay + " " + luongtien + "</strong>."); 
+                        $("#conbobtn8").fadeIn(animateDuration);
+                        var pos = $("#cuoicung").offset().top;
+                        $('html, body').animate({scrollTop: pos}, animateDuration);
+					});         
+				});
+                $("#conbobtn8").click(function() { 
+                	tienlai = tongsotien - vonbandau;
+					$("#conbobtn8").fadeOut(animateDuration, function(){ 
+                        $("#laicuoi").html(
+                        "Số tiền Lãi (" + "<strong>" + tongsotien + " " + luongtien + "</strong>" + " - " + "<strong>" + vonbandau + " " + luongtien + "</strong>" + " = <strong>" + tienlai + " " + luongtien + "</strong>)<br>" + "Trong đó số lãi lần bán 1: <strong>" + lailan1 + " " + luongtien + "</strong><br>Trong đó số lãi lần bán 2: <strong>" + lailan2 + " " + luongtien + "</strong>");
+                        var pos = $("#thongtin").offset().top;
+                        $('html, body').animate({scrollTop: pos}, animateDuration);
+                        $("#laicuoi").fadeIn(animateDuration);
+					});         
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Con Bò của ông Nam</h1>
+		<div class="in-content" id="thongtin">
+			<p>Số tiền vốn ban đầu của ông Nam: <strong><span id='vonbandau'></span></strong></p>
+			<p>Số tiền ông Nam đang có: <strong><span id='sotien'></span></strong><span class="spec" id="spec1">-</span><span class="conbobtn" id="conbobtn1">Bắt đầu</span></p>
+			<p>Số tiền ông Nam đang nợ: <strong><span id='sono'></span></strong></p>
+            <p id="laicuoi"></p>
+		</div>
+		
+		<div class="in-content" id="mualan1">
+			<p id="mualan1-text">Ông Nam <span class="conbobtn" id="conbobtn2">Mua</span></p>
+			<p class="conbo" id="conbo1"></p>
+			<p></p>
+		</div>
+		
+		<div class="in-content" id="banbo1">
+			<p id="banbo1-text">Sau đó ông Nam
+				<span class="conbobtn" id="conbobtn3">Bán</span>
+			</p>
+			<p class="conbo" id="conbo2"></p>
+			<p id="lailan1"></p>
+		</div>
+		
+		<div class="in-content" id="mualan2">
+			<p><span id="mualan2-text">Nhưng vì tiếc con bò nên ông Nam</span>
+				<span class="conbobtn" id="conbobtn4">Vay</span>
+                <span class="conbobtn" id="conbobtn5">Mua</span>
+                </p>
+			<p class="conbo" id="conbo3"></p>
+			<p></p>
+		</div>
+		
+		<div class="in-content" id="banbo2">
+			<p id="banbo2-text">Sau đó ông Nam
+				<span class="conbobtn" id="conbobtn6">Bán</span>
+			</p>
+			<p class="conbo" id="conbo4"></p>
+			<p id="lailan2"></p>
+		</div>
+        
+        <div class="in-content" id="cuoicung">
+			<p><span id="cuoicung-text">Sau đó ông Nam</span>
+				<span class="conbobtn" id="conbobtn7">Trả nợ</span>
+                <span class="conbobtn" id="conbobtn8">Tính lãi</span>
+			</p>
+			<p class="conbo" id="conbo4"></p>
+            <p id="trano"></p>
+		</div>
+	</body>
+</html>
