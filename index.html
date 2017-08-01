@@ -22,12 +22,61 @@
 			text-align: center;
 			}
 			
-			.spec::before, ::after{
+			h3 {
+			color: #444;
+			text-align: center;
+			}
+			
+			.spec::before, .spec::after{
 			content: " ";
 			}
 			
+			.main {
+			position: relative;
+			word-wrap: break-word;
+			}
+			
+			.main-outer {
+			min-width: 300px;
+			max-width: 1023px;
+			margin: 0 auto;
+			}
+			
+			.main-inner {
+			width: 100%;
+			background: #FFFFFF;
+			-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+			-goog-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+			box-shadow: 0 0 6px rgba(0,0,0,0.4);
+			-moz-box-shadow: 0 0 6px rgba(0,0,0,0.4);
+			-webkit-box-shadow: 0 0 6px rgba(0,0,0,0.4);
+			-goog-ms-box-shadow: 0 0 6px rgba(0,0,0,0.4);
+			border: 1px solid #CCC;
+			display: inline-block;
+			}
+			
+			.footer{
+			background-color: #CCC;
+			margin-top: 50px;
+			padding: 10px;
+			padding-bottom: 10px;
+			}
+			
+			.contact {
+			float:left;
+			}
+			
+			.fb-page {
+			float:left;
+			}
+			
+			.copyright {
+			text-align: center;
+			}
+			
 			.in-content {
-			width: 600px;
+			width: 520px;
 			margin: 15px auto;
 			background-color: #EEE;
 			border: 1px solid #AAA;
@@ -99,20 +148,20 @@
 						$("#mualan1").slideDown(animateDuration,function(){
                         	var pos = $("#mualan1").offset().top;
                         	$('html, body').animate({scrollTop: pos}, animateDuration);
-                        });
-                    });
+						});
+					});
 				});
 				$("#conbobtn2").click(function() {
 					tongsotien = mualan1 - vonbandau;
 					$("#conbobtn2").fadeOut(animateDuration,function(){
-                    	$("#mualan1-text").text("Ông Nam mua con");
+                    	$("#mualan1-text").text("Bác Nam mua con");
 						$("#conbo1").text("Bò giá " + mualan1 + " " + luongtien);
 						$("#conbo1").fadeIn(animateDuration,function(){
                         	$("#sotien").text(tongsotien + " " + luongtien);  
 							$("#banbo1").slideDown(animateDuration,function(){
                             	var pos = $("#banbo1").offset().top;
                         		$('html, body').animate({scrollTop: pos}, animateDuration);
-                            });
+							});
 						});  
 					}); 
 				});
@@ -121,9 +170,9 @@
 					tongsotien = lailan1 + vonbandau;
 					banlan1 = tongsotien;
 					$("#conbobtn3").fadeOut(animateDuration,function(){
-                    	$("#banbo1-text").text("Sau đó ông Nam bán con");
+                    	$("#banbo1-text").text("Sau đó bác Nam bán con");
 						$("#conbo2").text("Bò giá " + banlan1 + " " + luongtien);
-						$("#lailan1").html("Ông Nam lãi <strong>" + lailan1 + " " + luongtien +"</strong> ở lần bán thứ nhất.");
+						$("#lailan1").html("Bác Nam lãi <strong>" + lailan1 + " " + luongtien +"</strong> ở lần bán thứ nhất.");
 						$("#conbo2").fadeIn(animateDuration,function(){
 							$("#lailan1").fadeIn(animateDuration,function(){
 								$("#conbobtn4").text("Vay " + tienvay + " " + luongtien);
@@ -131,8 +180,8 @@
 								$("#mualan2").slideDown(animateDuration, function(){
                             		var pos = $("#mualan2").offset().top;
                         			$('html, body').animate({scrollTop: pos}, animateDuration);
-                            	});
-                        	});
+								});
+							});
 						});
 					});  
 				});
@@ -142,7 +191,7 @@
 					$("#conbobtn4").fadeOut(animateDuration,function(){
                     	$("#sono").text(sono + " " + luongtien);
 						$("#sotien").text(tongsotien + " " + luongtien);
-                        $("#mualan2-text").html("Nhưng vì tiếc con bò nên ông Nam vay <strong>" + sono + " " + luongtien +"</strong> để");
+                        $("#mualan2-text").html("Nhưng vì tiếc con bò nên bác Nam vay <strong>" + sono + " " + luongtien +"</strong> để");
 						$("#conbobtn5").fadeIn(animateDuration);          
 					});          
 				});
@@ -150,14 +199,14 @@
 					mualan2 = giaboban2;
 					tongsotien = mualan2 - (banlan1 + sono);       
 					$("#conbobtn5").fadeOut(animateDuration,function(){
-                    	$("#mualan2-text").html("Nhưng vì tiếc con bò nên ông Nam vay <strong>" + sono + " " + luongtien + "</strong> để mua lại con");
+                    	$("#mualan2-text").html("Nhưng vì tiếc con bò nên bác Nam vay <strong>" + sono + " " + luongtien + "</strong> để mua lại con");
 						$("#conbo3").text("Bò giá " + mualan2 + " " + luongtien);
 						$("#conbo3").fadeIn(animateDuration,function(){
                             $("#sotien").text(tongsotien + " " + luongtien);
 							$("#banbo2").slideDown(animateDuration, function(){
                             	var pos = $("#banbo2").offset().top;
                         		$('html, body').animate({scrollTop: pos}, animateDuration);
-                            });
+							});
 						});
 					});          
 				});
@@ -167,16 +216,16 @@
 					banlan2 = tongsotien;
 					$("#conbobtn6").fadeOut(animateDuration,function(){
 						$("#conbo4").text("Bò giá " + banlan2 + " " + luongtien);
-						$("#lailan2").html("Ông Nam lãi <strong>" + lailan2 + " " + luongtien +"</strong> ở lần bán thứ hai");
-						$("#banbo2-text").text("Sau đó ông Nam bán con");
+						$("#lailan2").html("Bác Nam lãi <strong>" + lailan2 + " " + luongtien +"</strong> ở lần bán thứ hai");
+						$("#banbo2-text").text("Sau đó bác Nam bán con");
 						$("#conbo4").fadeIn(animateDuration,function(){
 							$("#lailan2").fadeIn(animateDuration,function(){
                             	$("#sotien").text(tongsotien + " " + luongtien);
 								$("#cuoicung").slideDown(animateDuration, function(){
                             		var pos = $("#cuoicung").offset().top;
                         			$('html, body').animate({scrollTop: pos}, animateDuration);
-                            	});
-                            });
+								});
+							});
 						});
 					});  
 				});
@@ -186,7 +235,7 @@
 					$("#conbobtn7").fadeOut(animateDuration, function(){ 
                     	$("#sotien").text(tongsotien + " " + luongtien);
 						$("#sono").text(sono + " " + luongtien);
-                        $("#trano").html("Ông Nam đã trả nợ <strong>" + tienvay + " " + luongtien + "</strong>."); 
+                        $("#trano").html("Bác Nam đã trả nợ <strong>" + tienvay + " " + luongtien + "</strong>."); 
                         $("#conbobtn8").fadeIn(animateDuration);
                         var pos = $("#cuoicung").offset().top;
                         $('html, body').animate({scrollTop: pos}, animateDuration);
@@ -224,54 +273,90 @@
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
 		</script>
-		<h1>Con Bò của ông Nam</h1>
-		<div class="in-content" id="thongtin">
-			<p>Số tiền vốn ban đầu của ông Nam: <strong><span id='vonbandau'></span></strong></p>
-			<p>Số tiền ông Nam đang có: <strong><span id='sotien'></span></strong><span class="spec" id="spec1">-</span><span class="conbobtn" id="conbobtn1">Bắt đầu</span></p>
-			<p>Số tiền ông Nam đang nợ: <strong><span id='sono'></span></strong></p>
-            <p id="laicuoi"></p>
+		<div class="main">
+			<div class="main-outer">
+				<div class="main-inner">
+					<h1>Con Bò của bác Nam</h1>
+					<div class="in-content" id="thongtin">
+						<p>Số tiền vốn ban đầu của bác Nam: <strong><span id='vonbandau'></span></strong></p>
+						<p>Số tiền bác Nam đang có: <strong><span id='sotien'></span></strong><span class="spec" id="spec1">-</span><span class="conbobtn" id="conbobtn1">Bắt đầu</span></p>
+						<p>Số tiền bác Nam đang nợ: <strong><span id='sono'></span></strong></p>
+						<p id="laicuoi"></p>
+					</div>
+					
+					<div class="in-content" id="mualan1">
+						<p id="mualan1-text">Bác Nam <span class="conbobtn" id="conbobtn2">Mua</span></p>
+						<p class="conbo" id="conbo1"></p>
+						<p></p>
+					</div>
+					
+					<div class="in-content" id="banbo1">
+						<p id="banbo1-text">Sau đó bác Nam
+							<span class="conbobtn" id="conbobtn3">Bán</span>
+						</p>
+						<p class="conbo" id="conbo2"></p>
+						<p id="lailan1"></p>
+					</div>
+					
+					<div class="in-content" id="mualan2">
+						<p><span id="mualan2-text">Nhưng vì tiếc con bò nên bác Nam</span>
+							<span class="conbobtn" id="conbobtn4">Vay</span>
+							<span class="conbobtn" id="conbobtn5">Mua</span>
+						</p>
+						<p class="conbo" id="conbo3"></p>
+						<p></p>
+					</div>
+					
+					<div class="in-content" id="banbo2">
+						<p id="banbo2-text">Sau đó bác Nam
+							<span class="conbobtn" id="conbobtn6">Bán</span>
+						</p>
+						<p class="conbo" id="conbo4"></p>
+						<p id="lailan2"></p>
+					</div>
+					
+					<div class="in-content" id="cuoicung">
+						<p><span id="cuoicung-text">Sau đó bác Nam</span>
+							<span class="conbobtn" id="conbobtn7">Trả nợ</span>
+							<span class="conbobtn" id="conbobtn8">Tính lãi</span>
+						</p>
+						<p class="conbo" id="conbo4"></p>
+						<p id="trano"></p>
+					</div>
+					<div class="fb-like" data-href="http://conbo.vscopicsartvn.com/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+					<div class="fb-comments" data-href="http://conbo.vscopicsartvn.com/" data-width="auto" data-numposts="10"></div>
+					
+					<div class="footer">
+						<div class="contact">
+							<ul>
+								<li>
+									Trang chủ: <a href="http://www.vscopicsartvn.com/" target="_blank">VSCO PicsArt Việt Nam</a>
+								</li>
+								<li>
+									Facebook: <a href="https://www.facebook.com/vscopicsartvn/" target="_blank">VSCO PicsArt Việt Nam</a>
+								</li>
+								<li>
+									Facebook Group: <a href="https://www.facebook.com/groups/vscopicsartvn/" target="_blank">VSCO PicsArt Việt Nam</a>
+								</li>
+								<li>
+									Instagram: <a href="https://www.instagram.com/vscopicsartvn/" target="_blank">VSCO PicsArt Việt Nam</a>
+								</li>
+								<li>
+									SĐT:  01655 990 888
+								</li>
+								<li>
+									Mail: <a href="mailto:vscoallpresets@gmail.com">vscoallpresets@gmail.com</a>
+								</li>
+							</ul>
+						</div>
+						<div class="fb-page" data-href="https://www.facebook.com/vscopicsartvn/" data-width="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/vscopicsartvn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/vscopicsartvn/">VSCO Picsart Việt Nam</a></blockquote></div>
+						<div style="clear: both;" />
+						<div class="copyright">
+							<p>Copyright © 2017, <b>VSCO PicsArt Việt Nam</b></p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		
-		<div class="in-content" id="mualan1">
-			<p id="mualan1-text">Ông Nam <span class="conbobtn" id="conbobtn2">Mua</span></p>
-			<p class="conbo" id="conbo1"></p>
-			<p></p>
-		</div>
-		
-		<div class="in-content" id="banbo1">
-			<p id="banbo1-text">Sau đó ông Nam
-				<span class="conbobtn" id="conbobtn3">Bán</span>
-			</p>
-			<p class="conbo" id="conbo2"></p>
-			<p id="lailan1"></p>
-		</div>
-		
-		<div class="in-content" id="mualan2">
-			<p><span id="mualan2-text">Nhưng vì tiếc con bò nên ông Nam</span>
-				<span class="conbobtn" id="conbobtn4">Vay</span>
-                <span class="conbobtn" id="conbobtn5">Mua</span>
-                </p>
-			<p class="conbo" id="conbo3"></p>
-			<p></p>
-		</div>
-		
-		<div class="in-content" id="banbo2">
-			<p id="banbo2-text">Sau đó ông Nam
-				<span class="conbobtn" id="conbobtn6">Bán</span>
-			</p>
-			<p class="conbo" id="conbo4"></p>
-			<p id="lailan2"></p>
-		</div>
-        
-        <div class="in-content" id="cuoicung">
-			<p><span id="cuoicung-text">Sau đó ông Nam</span>
-				<span class="conbobtn" id="conbobtn7">Trả nợ</span>
-                <span class="conbobtn" id="conbobtn8">Tính lãi</span>
-			</p>
-			<p class="conbo" id="conbo4"></p>
-            <p id="trano"></p>
-		</div>
-		<div class="fb-like" data-href="http://conbo.vscopicsartvn.com/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-		<div class="fb-comments" data-href="http://conbo.vscopicsartvn.com/" data-width="auto" data-numposts="10"></div>
 	</body>
 </html>
