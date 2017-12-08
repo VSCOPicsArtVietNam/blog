@@ -213,7 +213,7 @@ var uch_tool_html = '<div id="uch-auto-info-panel" style="display: none; positio
 '<li><b>Có thể mua bằng:</b> ' + useBlockchain + '</li>'+
 '<li><b>Mua được tối đa:</b> ' + canBuy + ' UCH</li>'+
 '<li><p style="margin: 0;"><b>Verification Token:</b></p><p>' + __token + '</p></li></ul>'+
-'<p style="text-align: right; font-size: .9em; padding-right: 5px;">Version 1.3 edit by <a style="color: #0769ad" href="https://www.facebook.com/mr.huy.92" target="_blank">mr.huy.92</a></p></div></div>'+
+'<p style="text-align: right; font-size: .9em; padding-right: 5px;">Version 1.4 edit by <a style="color: #0769ad" href="https://www.facebook.com/mr.huy.92" target="_blank">mr.huy.92</a></p></div></div>'+
 '<div id="uch-auto-show-info-panel" style="display: block; position: fixed; box-shadow: 0 2px 10px rgba(0,0,0,0.7); bottom: 10px; right: 10px; width: auto; margin-bottom: 0; overflow: hidden; padding: 8px 12px; font-size: 1.1em; font-weight: bold; z-index: 999; -webkit-animation-name: bounceInUp; animation-name: bounceInUp; -webkit-animation-delay: .5s; animation-delay: .5s; -webkit-animation-duration: 1.2s; animation-duration: 1.2s; background-color: #fff; border: 1px solid #7e7e80; border-radius: 5px;">Xem thêm ...</div>';
 $(uch_tool_html).appendTo("body");
 
