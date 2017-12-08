@@ -16,15 +16,16 @@ $(document).ready(function() {
 		clockFace: 'DailyCounter',
 		language:'vi-vn',
 		autoStart: false,
-                callbacks: {
-                    stop: function () {
-                      var html = [];
-                        html.push('<h4 class="buy-ico-title-time"><img class="img-logo" src="../images/time-buy-ico.png"><span>ICO START NOW</span></h4>');
-                        $('#div-time-count-down').html(html.join(''));
-                    }
+		callbacks: {
+			stop: function () {
+				var html = [];
+				html.push('<h4 class="buy-ico-title-time"><img class="img-logo" src="../images/time-buy-ico.png"><span>ICO START NOW</span></h4>');
+				$('#div-time-count-down').html(html.join(''));
+			}
+		}
 	});
 	
-        clock.setTime(diffTime);
-        clock.setCountdown(true);
-        clock.start();
-});
+	clock.setTime(diffTime);
+	clock.setCountdown(true);
+	clock.start();
+});	
