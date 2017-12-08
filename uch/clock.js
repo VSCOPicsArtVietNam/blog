@@ -10,6 +10,7 @@ $(document).ready(function() {
 	
 	// Calculate the difference in seconds between the future and current date
 	var diffTime = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+	diffTime = diffTime < 0 ? 0 : diffTime;
 	
 	// Instantiate a coutdown FlipClock
 	var clock = $('.clock').FlipClock(diffTime , {
