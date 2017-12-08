@@ -6,7 +6,7 @@ $(document).ready(function() {
 	var currentDate = new Date();
 	
 	// Set some date in the future. In this case, it's always Jan 1
-	var futureDate = new Date(1512751991592);
+	var futureDate = new Date(1512918000000);
 	
 	// Calculate the difference in seconds between the future and current date
 	var diffTime = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
