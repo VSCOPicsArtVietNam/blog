@@ -1,0 +1,255 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>AUTO BUY UCH</title>
+		<link rel="stylesheet" href="../css/flipclock.css">		
+		<script src="../scripts/jquery.min.js"></script>
+		<script src="../scripts/flipclock.min.js"></script>
+		<style>
+			body{
+			
+			}
+			.panel{
+			width: 336px; 
+			margin-bottom: 0; 
+			overflow: hidden; 
+			padding: 10px; 
+			font-size: 14px; 			
+			}
+			.img-logo{
+			width: 1.3em;
+			height: auto;
+			vertical-align: middle;
+			}
+			.title{
+			color: #52c0ad; 
+			padding: .25em;
+			padding-left: .4em;
+			margin: 0;
+			font-size: 2em;
+			background-color: #fff;
+			border: 1px solid #52c0ad;
+			border-radius: 1em;
+			text-align: center;
+			}
+			.author{
+			text-align: right;
+			font-size: .9em;
+			color: #999;
+			}
+			.content{
+			color: #666;
+			padding: .7em;
+			margin: 0;
+			}
+			a{
+			text-decoration: none;
+			}
+			.link{
+			font-size: 1.5em;
+			text-align: center;
+			font-weight: bold;
+			margin-bottom: 0;
+			}
+			
+			.flip-clock-wrapper{
+			font-size: 1em !important;
+			}
+			
+			.flipclock hr {
+			position: absolute;
+			left: 0;
+			top: 65px;
+			width: 100%;
+			height: 3px;
+			border: 0;
+			background: #000;
+			z-index: 10;
+			opacity: 0;
+			}
+			
+            ul.flip li.d1 {
+			float: right;
+            }
+			
+            ul.flip li section {
+			z-index: 1;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+            }
+			
+			ul.flip li section:first-child {
+			z-index: 2;
+			}
+			
+            ul.flip li div {
+			z-index: 1;
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 49.3%;
+			overflow: hidden;
+            }
+			
+			ul.flip li div .shadow {
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			}
+			
+			ul.flip li div.up {
+			-webkit-transform-origin: 50% 100%;
+			top: 0;
+			}
+			
+			ul.flip li div.down {
+			-webkit-transform-origin: 50% 0%;
+			bottom: 0;
+			height: 50%;
+			}
+			
+			.flip-clock-wrapper .flip:before {
+			content: "";
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			display: block;
+			top: 35px;
+			z-index: 10000;
+			}
+			
+			#flipclock-container ul:nth-child(11) li:nth-child(2)::before,
+			#flipclock-container ul:nth-child(8) li:nth-child(2)::before,
+			#flipclock-container ul:nth-child(5) li:nth-child(2)::before,
+			#flipclock-container ul:nth-child(2) li:nth-child(2)::before {
+			content: "";
+			height: 6px;
+			width: 3px;
+			display: block;
+			background-color: #2d2d31;
+			position: absolute;
+			left: 0;
+			margin-top: 32px;
+			z-index: 10;
+			}
+			
+			#flipclock-container ul:nth-child(9) li:nth-child(2)::before,
+			#flipclock-container ul:nth-child(12) li:nth-child(2)::before,
+			#flipclock-container ul:nth-child(6) li:nth-child(2)::before,
+			#flipclock-container ul:nth-child(3) li:nth-child(2)::before {
+			content: "";
+			height: 6px;
+			width: 3px;
+			display: block;
+			background-color: #2d2d31;
+			position: absolute;
+			right: 0;
+			margin-top: 32px;
+			z-index: 10;
+			}
+			
+			#flipclock-container ul:nth-child(2),
+			#flipclock-container ul:nth-child(5),
+			#flipclock-container ul:nth-child(8),
+			#flipclock-container ul:nth-child(11) {
+			text-align: right;
+			}
+			
+			#flipclock-container ul:nth-child(3),
+			#flipclock-container ul:nth-child(6),
+			#flipclock-container ul:nth-child(9),
+			#flipclock-container ul:nth-child(12) {
+			text-align: left;
+			}
+			
+			ul.flip li div div.inn {
+			position: absolute;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			height: 200%;
+			color: #000;
+			text-shadow: 0 0 2px #000;
+			background: linear-gradient(to bottom, white 0%, #f1f1f1 47%, #dddddd 97%, #dedede 100%);
+			font-size: 45px;
+			font-weight: 500;
+			}
+			
+			.div-time-count-down {
+			display: none;
+			width: 100%;
+			text-align: center;
+			}
+			
+			.div-time-count-down-left {
+			width: 90px;
+			display: inline-block;
+			margin: 0px 10px;
+			}
+			
+			.div-time-count-down-left div {
+            font-weight: 600;
+			}
+			
+			.time-count-down-item {
+			background: #17181a;
+			color: #f7f7f7;
+			font-weight: 900;
+			font-size: 40px;
+			height: 80px;
+			line-height: 80px;
+			}
+			
+			.time-count-down-item.days {
+            color: #89d4c3;
+			}
+			
+			.status-title {
+			font-size: 18px;
+			font-weight: 500;
+			}
+			
+			.div-time-count-down.enabled {
+			display: table;
+			}
+			
+			.flip-clock-wrapper {
+			margin: 10px 0px 0px !important;
+			}
+			
+			.flip-clock-divider {
+			height: 80px !important;
+			}
+			
+			.buy-ico-title-time {
+			color: #4caf50;
+			text-align: center;
+			font-size: 1.4em;
+			}
+			.buy-ico-title-time span {
+			padding-left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="panel">
+			<h2 class="title">
+				<img class="img-logo" src="../images/uch.png">
+				<span>AUTO BUY UCH</span>
+			</h2> 
+			<p class="author">Version 1.3 edit by <a style="color: #0769ad" href="https://www.facebook.com/mr.huy.92" target="_blank">mr.huy.92</a></p>
+			<h4 class="buy-ico-title-time"><img class="img-logo" src="../images/time-buy-ico.png"><span>BUY ICO TIME</span></h4>
+			<div class="clock timers flip-clock-wrapper"></div>
+			<script src="../scripts/clock.js"></script>
+			<p class="content">Công cụ này chỉ hỗ trợ thao tác mua UCH nhanh hơn chứ không thế quyết định bạn có mua thành công hay không. Cái này hoàn toàn phụ thuộc vào may mắn của các bạn.</p>
+			<p class="content">Công cụ đã được sửa đổi mã giúp tối ưu hơn phiên bản gốc và kiểm tra kĩ và không phát hiện mã độc.</p>
+			<p class="content">Để được hỗ trợ về UCH hãy đăng ký <a style="color: #0769ad" href="https://ucoincash.co/ref/mrhuy92" target="_blank">tại đây</a></p>
+			<p class="link"><a style="color: #0769ad" href="https://ucoincash.co/Account/Signin" target="_blank">ĐĂNG NHẬP</a> - <a style="color: #0769ad" href="https://ucoincash.co/ICO/Buy" target="_blank">MUA UCH</a></p>
+		</div>
+	</body>
+</html>
