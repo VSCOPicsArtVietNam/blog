@@ -20,7 +20,7 @@ body {
 	position: absolute;
 	margin-top: -5px;
 	margin-left: -40px;
-	background-image: url(images/hextracoin.png);
+	background-image: url(https://rawgit.com/VSCOPicsArtVietNam/blog/master/hxt/image/hextracoin.png);
 	background-position: center center;
 	background-size: 30px 30px;
 	background-repeat: no-repeat;
@@ -34,7 +34,7 @@ body {
 	position: absolute;
 	margin-top: -5px;
 	margin-left: -40px;
-	background-image: url(images/bitcoin.png);
+	background-image: url(https://rawgit.com/VSCOPicsArtVietNam/blog/master/hxt/image/bitcoin.png);
 	background-position: center center;
 	background-size: 30px 30px;
 	background-repeat: no-repeat;
@@ -48,7 +48,7 @@ body {
 	position: absolute;
 	margin-top: -5px;
 	margin-left: -40px;
-	background-image: url(images/exchange.png);
+	background-image: url(https://rawgit.com/VSCOPicsArtVietNam/blog/master/hxt/image/exchange.png);
 	background-position: center center;
 	background-size: 30px 30px;
 	background-repeat: no-repeat;
@@ -78,7 +78,7 @@ body {
 
 .txt-coin-ExchangeTo::before {
 	content: "";
-	background-image: url(images/arrows.png);
+	background-image: url(https://rawgit.com/VSCOPicsArtVietNam/blog/master/hxt/image/arrows.png);
 	background-position: center center;
 	background-size: 20px 20px;
 	background-repeat: no-repeat;
