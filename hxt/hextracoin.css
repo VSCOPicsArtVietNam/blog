@@ -1,0 +1,148 @@
+body {
+	background: linear-gradient(to right, #40a5e5, #196391);
+	color: #FFF;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.panel {
+	width: 300px; 
+	margin-bottom: 0; 
+	overflow: hidden; 
+	padding: 0 5px;
+	display: inline-block;
+}
+
+.txt-coin-HXT::before {
+	content: "";
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	position: absolute;
+	margin-top: -5px;
+	margin-left: -40px;
+	background-image: url(../images/hextracoin.png);
+	background-position: center center;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+
+.txt-coin-BTC::before {
+	content: "";
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	position: absolute;
+	margin-top: -5px;
+	margin-left: -40px;
+	background-image: url(../images/bitcoin.png);
+	background-position: center center;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+
+.txt-coin-Exchange::before {
+	content: "";
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	position: absolute;
+	margin-top: -5px;
+	margin-left: -40px;
+	background-image: url(../images/exchange.png);
+	background-position: center center;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+
+.txt-coin-pricevnd {
+	font-size: 18px;
+	font-weight: 300;
+	border-left: 1px rgba(255, 255, 255, .8) solid;
+	margin-left: 5px;
+	padding-left: 8px;
+}
+
+.txt-coin-to-currency {
+	border-left: 1px rgba(255, 255, 255, .8) solid;
+	margin-left: 5px;
+	padding-left: 8px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.txt-coin-HXT, .txt-coin-BTC, .txt-coin-Exchange { 
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 35px;
+}
+
+.txt-coin-ExchangeTo::before {
+	content: "";
+	background-image: url(../images/arrows.png);
+	background-position: center center;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	position: absolute;
+	margin-top: 1px;
+	margin-left: -25px;
+}
+
+.txt-coin-ExchangeTo {
+	font-weight: bold;
+	font-size: 20px;
+	padding-left: 27px;
+}
+
+.txt-coin-char{
+	font-size: 16px;
+}
+
+.txt-coin-price, .txt-coin-currency {	
+	text-align: center;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.info-section {
+	text-align: left;
+}
+
+.price-section {
+	text-align: center;
+}
+
+.waiting-64{
+	display: block;
+	width: 64px;
+	height: auto;
+	margin: 0 auto;
+}
+.author{
+	text-align: right;
+	font-size: .9em;
+	color: #ccc;
+	margin-bottom: 0;
+}
+a{
+	text-decoration: none;
+}
+a:link, a:visited{
+	color: #c99106;
+	font-weight: bold;
+}
+a:hover, a:active{
+	color: #fec128;
+}
+.title{
+	color: #fff; 
+	font-size: 2em;
+	text-align: center;
+}
+.content{
+	color: #fff;
+	padding: 0;
+	margin: 0;
+}
